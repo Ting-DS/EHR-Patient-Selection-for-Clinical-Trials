@@ -1,4 +1,4 @@
-#  Diabetes Patient Selection for Drug Clinical Trials Utilizing EHR Data 
+#  AI for EHR Data: Diabetes Patient Selection for Drug Clinical Trials
 <div align="center">
   <img src="https://github.com/Ting-DS/EHR-Patient-Selection-for-Clinical-Trials/blob/main/EHR.jpg" width="50%">
 </div>
