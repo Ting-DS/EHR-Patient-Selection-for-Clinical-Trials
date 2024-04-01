@@ -27,6 +27,15 @@ The data contains such attributes as patient number, race, gender, age, admissio
 Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by UC Ivrine. Please note that it is limited in its representation of some key features such as diagnosis codes which are usually an unordered list in 835s/837s (the HL7 standard interchange formats used for claims and remits).
 
 ## Analysis & Methods
+### Data Loading & Schema Review
+ - Core dataset: 143,424 rows with 26 columns
+ - Dataset Level: line level (101,766 unique encounters)
+ - NDC Lookup table: 267 drug codes related to diabetes treatment.
+### Exploratory Data Analysis
+ - Check null/missing value:
+ -- with a high amount of null values: "weight", "payer_code", "medical_specialty" fields with a high amount of zero values: "number_inpatient", "number_outpatient", "num_procedures", "number_ermergency"
+
+### 
  - Use the Tensorflow Dataset API to scalably extract, transform, and load datasets and build datasets aggregated at the line, encounter, and patient data levels(longitudinal)
  - Analyze EHR datasets to check for common issues (data leakage, statistical properties, missing values, high cardinality) by performing exploratory data analysis.
  - Create categorical features from Key Industry Code Sets (ICD, CPT, NDC) and reduce dimensionality for high cardinality features by using embeddings
