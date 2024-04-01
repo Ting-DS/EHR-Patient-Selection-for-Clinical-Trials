@@ -1,4 +1,4 @@
-# Patient Selection for Diabetes Drug Clinical Trials
+# Patient Selection for Diabetes Drug Clinical Trials Applying EHR data 
 ## Background
 
 <div align="center">
