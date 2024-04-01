@@ -33,7 +33,7 @@ Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by U
  - NDC Lookup table: 267 drug codes related to diabetes treatment.
 ### Exploratory Data Analysis
  - Check null/missing value:
-   - With a high amount of null/missing values: 'weight', "payer_code", "medical_specialty"
+   - With a high amount of null/missing values: `weight`, "payer_code", "medical_specialty"
    - with a high amount of zero values: "number_inpatient", "number_outpatient", "num_procedures", "number_ermergency"
 
 ### 
