@@ -33,7 +33,7 @@ Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by U
  - NDC Lookup table: 267 drug codes related to diabetes treatment.
 ### Exploratory Data Analysis
  - Check null/missing value:
- -- with a high amount of null values: "weight", "payer_code", "medical_specialty" fields with a high amount of zero values: "number_inpatient", "number_outpatient", "num_procedures", "number_ermergency"
+   - with a high amount of null values: "weight", "payer_code", "medical_specialty" fields with a high amount of zero values: "number_inpatient", "number_outpatient", "num_procedures", "number_ermergency"
 
 ### 
  - Use the Tensorflow Dataset API to scalably extract, transform, and load datasets and build datasets aggregated at the line, encounter, and patient data levels(longitudinal)
