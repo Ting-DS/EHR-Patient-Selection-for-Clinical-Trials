@@ -8,7 +8,7 @@
 
 ## Data Source
 <div align="center">
-  <img src="https://github.com/Ting-DS/EHR-Patient-Selection-for-Clinical-Trials/blob/main/DataSource.png" width="50%">
+  <img src="https://github.com/Ting-DS/EHR-Patient-Selection-for-Clinical-Trials/blob/main/DataSource.png" width="80%">
 </div>
 Due to healthcare PHI regulations (HIPAA, HITECH), there are limited number of publicly available datasets and some datasets require training and approval. So, we are using a dataset from UC Irvine that has been modified for this project. The dataset represents ten years (1999-2008) of clinical care at 130 US hospitals and integrated delivery networks. Please note that it is limited in its representation of some key features such as diagnosis codes which are usually an unordered list in 835s/837s (the HL7 standard interchange formats used for claims and remits).
 
