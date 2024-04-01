@@ -10,11 +10,23 @@
 <div align="center">
   <img src="https://github.com/Ting-DS/EHR-Patient-Selection-for-Clinical-Trials/blob/main/DataSource.png" width="80%">
 </div>
-Due to healthcare PHI regulations (HIPAA, HITECH), there are limited number of publicly available datasets and some datasets require training and approval. So, we are using a dataset from UC Irvine that has been modified for this project. The dataset represents ten years (1999-2008) of clinical care at 130 US hospitals and integrated delivery networks. Please note that it is limited in its representation of some key features such as diagnosis codes which are usually an unordered list in 835s/837s (the HL7 standard interchange formats used for claims and remits).
 
- - Data source description can be found [here](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008)
+Data source description: [here](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008)
 
- - Data Schema can be found [here](https://github.com/udacity/nd320-c1-emr-data-starter/tree/master/project/data_schema_references). There are two CSVs that provide more details on the fields and some of the mapped values.
+The dataset represents ten years (1999-2008) of clinical care at 130 US hospitals and integrated delivery networks. It includes over 50 features representing patient and hospital outcomes. Information was extracted from the database for encounters that satisfied the following criteria.
+ - (1)	It is an inpatient encounter (a hospital admission).
+ - (2)	It is a diabetic encounter, that is, one during which any kind of diabetes was entered into the system as a diagnosis.
+ - (3)	The length of stay was at least 1 day and at most 14 days.
+ - (4)	Laboratory tests were performed during the encounter.
+ - (5)	Medications were administered during the encounter.
+
+The data contains such attributes as patient number, race, gender, age, admission type, time in hospital, medical specialty of admitting physician, number of lab tests performed, HbA1c test result, diagnosis, number of medications, diabetic medications, number of outpatient, inpatient, and emergency visits in the year before the hospitalization, etc.
+
+Data Reference Information: [here](https://github.com/udacity/nd320-c1-emr-data-starter/tree/master/project/data_schema_references). There are two CSVs that provide more details on the fields and some of the mapped values. Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by UC Ivrine. Please note that it is limited in its representation of some key features such as diagnosis codes which are usually an unordered list in 835s/837s (the HL7 standard interchange formats used for claims and remits).
+
+
+
+
 
 ## Analysis & Methods
  - Use the Tensorflow Dataset API to scalably extract, transform, and load datasets and build datasets aggregated at the line, encounter, and patient data levels(longitudinal)
