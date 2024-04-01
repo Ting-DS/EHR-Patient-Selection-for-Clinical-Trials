@@ -33,9 +33,9 @@ Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by U
  - NDC Lookup table: 267 drug codes related to diabetes treatment.
 ### Exploratory Data Analysis
  - Check null/missing value:
-   - With a high amount of null/missing values: `weight`, "payer_code", "medical_specialty"
-   - with a high amount of zero values: "number_inpatient", "number_outpatient", "num_procedures", "number_ermergency"
-
+   - With a high amount of null/missing values: `weight`, `payer_code`, `medical_specialty`
+   - with a high amount of zero values: `number_inpatient`, `number_outpatient`, `num_procedures`, `number_ermergency`
+ - Distribution of numerical fields: most distributions are skewed but the following are Gaussian: `age`, `weight`, `num_lab_procedures` and `num_medications`
 ### 
  - Use the Tensorflow Dataset API to scalably extract, transform, and load datasets and build datasets aggregated at the line, encounter, and patient data levels(longitudinal)
  - Analyze EHR datasets to check for common issues (data leakage, statistical properties, missing values, high cardinality) by performing exploratory data analysis.
