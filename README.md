@@ -36,11 +36,17 @@ Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by U
  - Check null/missing value:
    - With a high amount of null/missing values: `weight`, `payer_code`, `medical_specialty`
    - with a high amount of zero values: `number_inpatient`, `number_outpatient`, `num_procedures`, `number_ermergency`
- - Distribution of numerical fields: most distributions are skewed but the following are Gaussian: `age`, `weight`, `num_lab_procedures` and `num_medications`
-### 
- - Use the Tensorflow Dataset API to scalably extract, transform, and load datasets and build datasets aggregated at the line, encounter, and patient data levels(longitudinal)
- - Analyze EHR datasets to check for common issues (data leakage, statistical properties, missing values, high cardinality) by performing exploratory data analysis.
+ - Check Distribution of numerical fields: most distributions are skewed but the following are Gaussian: `age`, `weight`, `num_lab_procedures` and `num_medications`
+ - Check high cardinality:
+ - Feature selection: exclude `payer_code` and `weight` fields
+### Data Preparation for deep learning model
+ - Transform and aggregates the line level EHR dataset to encounter and patient data levels(longitudinal) by Tensorflow Dataset API
  - Create categorical features from Key Industry Code Sets (ICD, CPT, NDC) and reduce dimensionality for high cardinality features by using embeddings
+ - Reduce NDC codes dimensionality by mapping NDC codes to generic drug names based on clinical domain knowledge
+ - Split the dataset into `train:validation:test = 6:2:2`, and avoid the patient and encounter data leakage
+### Feature Engineering
+ - 
+
  - Create derived features(bucketing, cross-features, embeddings) utilizing Tensorflow feature columns on both continuous and categorical input features
  - Use the Tensorflow Probability library to train a build Deep Learning Regression Model with Sequential API and TF Probability Layers that provides uncertainty range predictions that allow for risk adjustment/prioritization and triaging of predictions
  - Analyze and determine biases for a model for key demographic groups by evaluating performance metrics across groups by using the Aequitas framework
