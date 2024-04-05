@@ -43,9 +43,12 @@ Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by U
  - Transform and aggregates the line level EHR dataset to encounter and patient data levels(longitudinal) by Tensorflow Dataset API
  - Create categorical features from Key Industry Code Sets (ICD, CPT, NDC) and reduce dimensionality for high cardinality features by using embeddings
  - Reduce NDC codes dimensionality by mapping NDC codes to generic drug names based on clinical domain knowledge
- - Split the dataset into `train:validation:test = 6:2:2`, and avoid the patient and encounter data leakage
+ - Split the dataset into `train:validation:test = 6:2:2`, and avoid the patient and encounter data leakage, in order to simplify the aggregation of data for the model, we only select the first encounter for each patient in the dataset. This is to reduce the risk of data leakage of future patient encounters.
+ - To make one records per patient, which is the first encounter records.
 ### Feature Engineering
- - 
+ - Aggregate Dataset to Right Level for Modeling: 
+
+
 
  - Create derived features(bucketing, cross-features, embeddings) utilizing Tensorflow feature columns on both continuous and categorical input features
  - Use the Tensorflow Probability library to train a build Deep Learning Regression Model with Sequential API and TF Probability Layers that provides uncertainty range predictions that allow for risk adjustment/prioritization and triaging of predictions
