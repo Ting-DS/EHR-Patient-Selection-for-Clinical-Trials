@@ -40,16 +40,18 @@ Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by U
  - Check high cardinality:
  - Feature selection: exclude `payer_code` and `weight` fields
 ### Data Preparation for deep learning model
- - Transform and aggregates the line level EHR dataset to encounter and patient data levels(longitudinal) by Tensorflow Dataset API
+ - Transform and aggregates the line level EHR dataset to encounter and patient data levels(longitudinal) by Tensorflow Dataset API - 
  - Create categorical features from Key Industry Code Sets (ICD, CPT, NDC) and reduce dimensionality for high cardinality features by using embeddings
  - Reduce NDC codes dimensionality by mapping NDC codes to generic drug names based on clinical domain knowledge
- - Split the dataset into `train:validation:test = 6:2:2`, and avoid the patient and encounter data leakage, in order to simplify the aggregation of data for the model, we only select the first encounter for each patient in the dataset. This is to reduce the risk of data leakage of future patient encounters.
- - To make one records per patient, which is the first encounter records.
+ - Split the dataset into `train:validation:test = 6:2:2`, and avoid the patient and encounter data leakage, in order to simplify the aggregation of data for the model, we only select the first encounter for each patient in the dataset.
+ - Make sure that a patient's data is not in more than one partition, so that we can avoid possible data leakage.
+
 ### Feature Engineering
- - Aggregate Dataset to Right Level for Modeling: 
+ - Create dummy columns for each unique generic drug name and adding those are input features to the model.
+ - Feature selection, impute zero for only numerical features to save time.
+ - Demographic and Label Representation Analysis of Split
 
-
-
+### Model Training
  - Create derived features(bucketing, cross-features, embeddings) utilizing Tensorflow feature columns on both continuous and categorical input features
  - Use the Tensorflow Probability library to train a build Deep Learning Regression Model with Sequential API and TF Probability Layers that provides uncertainty range predictions that allow for risk adjustment/prioritization and triaging of predictions
  - Analyze and determine biases for a model for key demographic groups by evaluating performance metrics across groups by using the Aequitas framework
