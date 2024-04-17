@@ -34,7 +34,7 @@ Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by U
  - NDC Lookup table: 267 drug codes related to diabetes treatment.
 
 <div align="center">
-  <img src="https://github.com/Ting-DS/EHR-Patient-Selection-for-Clinical-Trials/blob/main/Dataset Source.png" width="100%">
+  <img src="https://github.com/Ting-DS/EHR-Patient-Selection-for-Clinical-Trials/blob/main/Dataset%20Schema.png" width="100%">
 </div>
 
 ### Exploratory Data Analysis
@@ -62,6 +62,8 @@ Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by U
 
 ### Bias Analysis
  - Analyze and determine biases for a model for key demographic groups by evaluating performance metrics across groups by using the Aequitas framework
-
+<div align="center">
+  <img src="https://github.com/Ting-DS/EHR-Patient-Selection-for-Clinical-Trials/blob/main/Bias.png" width="100%">
+</div>
 
 
