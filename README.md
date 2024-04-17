@@ -54,6 +54,8 @@ Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by U
 ### Model Training
  - Create derived features(bucketing, cross-features, embeddings) utilizing Tensorflow feature columns on both continuous and categorical input features
  - Use the Tensorflow Probability library to train a build Deep Learning Regression Model with Sequential API and TF Probability Layers that provides uncertainty range predictions that allow for risk adjustment/prioritization and triaging of predictions
+
+### Bias Analysis
  - Analyze and determine biases for a model for key demographic groups by evaluating performance metrics across groups by using the Aequitas framework
 
 
