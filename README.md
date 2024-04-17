@@ -9,7 +9,7 @@
 
 ## Data Source
 <div align="center">
-  <img src="https://github.com/Ting-DS/EHR-Patient-Selection-for-Clinical-Trials/blob/main/DataSource.png" width="80%">
+  <img src="https://github.com/Ting-DS/EHR-Patient-Selection-for-Clinical-Trials/blob/main/DataSource.png" width="100%">
 </div>
 
 [Data Source Information](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008)
@@ -32,6 +32,11 @@ Due to healthcare PHI regulations (HIPAA, HITECH), this dataset is modified by U
  - Core dataset: 143,424 rows with 26 columns
  - Dataset Level: line level (101,766 unique encounters)
  - NDC Lookup table: 267 drug codes related to diabetes treatment.
+
+<div align="center">
+  <img src="https://github.com/Ting-DS/EHR-Patient-Selection-for-Clinical-Trials/blob/main/Dataset_Source.png" width="100%">
+</div>
+
 ### Exploratory Data Analysis
  - Check null/missing value:
    - With a high amount of null/missing values: `weight`, `payer_code`, `medical_specialty`
